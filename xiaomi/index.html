@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Player</title>
+	<script type="text/javascript" src="sewise-player/player/sewise.player.min.js"></script>
+</head>
+<body>
+<label for="url">在此输入视频地址：<input type="text" id="url"></label>
+<input type="button" value="确认" id="confirm">
+<section id="player" style="width: 640px; height: 360px;">
+	<!--<script type="text/javascript">
+		SewisePlayer.setup({
+			server: "vod",
+			type: "m3u8",
+			videourl: "http://10.33.28.181/mov/index.m3u8",
+			//videourl: "http://10.33.28.191/d3ada200c40598e5/b8ed0cbf3e4a2117.m3u8",
+			//videourl: "http://s3.amazonaws.com/_bc_dml/example-content/tears-of-steel/playlist.m3u8",
+			skin: "vodTransparent",
+			title: "M3U8 STU",
+			lang: "zh_CN"
+		}, "player");
+	</script>-->
+</section>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		var player = document.getElementById("player");
+		var url = document.getElementById("url");
+		var confirm = document.getElementById("confirm");
+		var script = document.createElement("script");
+		confirm.onclick = function () {
+			player.innerHTML = '';
+			script.innerHTML = 'SewisePlayer.setup({server:"vod",type:"m3u8",videourl:"' + url.value +  '",skin:"vodTransparent",title:"M3U8 STU",lang:"zh_CN"},"player");';
+			player.appendChild(script);
+		};
+	};
+</script>
+</body>
+</html>
