@@ -45,7 +45,7 @@ ul.clearfix:after {
 
 ul.list li {
     width: 25%;
-    line-height: 3;
+    height: 50px;
     float: left;
     list-style-type: none;
     -webkit-transition: all .5s ease;
@@ -79,5 +79,9 @@ footer li {
         float: none;
         width: 100%;
         text-align: center;
+    }
+    header.top h1 {
+        text-align: center;
+        padding-left: 0;
     }
 }
